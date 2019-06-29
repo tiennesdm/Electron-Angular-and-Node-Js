@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Hello I am HTML</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <h1>Video Info</h1>
+    <form action="">
+
+        <input type="file" name="pic" accept="video/*">
+        <button type="submit">Submit</button>
+
+    </form>
+    <script>
+        document.querySelector('form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const file = document.querySelector('input').files[0];
+            const fileName = document.querySelector('input').files[0].name;
+            const path = document.querySelector('input').files[0].path;
+            console.log('file', file);
+            console.log('path', path);
+        });
+    </script>
 </body>
-</html>
